@@ -107,15 +107,6 @@ def main():
             background-color: #0056b3;
         }
         
-        /* Card Styling */
-        .card {
-            background: #3a3a3c;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-        }
-        
         /* Chat Messages */
         .chat-message {
             padding: 1rem;
@@ -136,15 +127,17 @@ def main():
             border-radius: 15px 15px 15px 0;
         }
         
-        /* Remove unwanted spacing */
+        /* Remove unwanted spacing and dividers */
         [data-testid="stMarkdownContainer"] {
             margin: 0 !important;
             padding: 0 !important;
+            border: none !important;
         }
         
         .st-emotion-cache-1cvow4s {
             margin: 0 !important;
             padding: 0 !important;
+            border: none !important;
         }
 
         /* Error and Success Messages */
@@ -153,6 +146,7 @@ def main():
             color: #ffffff;
             border-radius: 8px;
             padding: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .st-alert-success {
@@ -160,6 +154,7 @@ def main():
             color: #ffffff;
             border-radius: 8px;
             padding: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Form styling */
@@ -184,6 +179,34 @@ def main():
         .streamlit-expanderHeader {
             background-color: #3a3a3c !important;
             border-radius: 5px;
+        }
+
+        /* Secondary button style */
+        .secondary-button {
+            background-color: #6c757d !important;
+        }
+        .secondary-button:hover {
+            background-color: #5a6268 !important;
+        }
+        
+        /* File uploader styling */
+        .uploadedFiles {
+            margin-top: 1rem;
+            background: transparent !important;
+        }
+        
+        /* Processed files section */
+        .processed-files {
+            margin-top: 1rem;
+            padding: 0;
+            background: transparent;
+        }
+        
+        /* Remove stMarkdown borders */
+        .element-container {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -227,15 +250,9 @@ def main():
 
         # Display processed files
         if st.session_state.processed_files:
-            st.markdown('<div class="card">', unsafe_allow_html=True)
             st.subheader("📚 Processed Documents")
             for filename in st.session_state.processed_files:
                 st.text(f"• {filename}")
-            st.markdown('</div>', unsafe_allow_html=True)
-
-        if st.button("Clear Chat History"):
-            st.session_state.chat_history = []
-            st.rerun()
 
     with col1:
         # Chat Section
@@ -288,6 +305,11 @@ def main():
                 })
                 
                 st.rerun()
+        
+        # Clear Chat History button
+        if st.button("Clear Chat History", type="secondary", key="clear_chat"):
+            st.session_state.chat_history = []
+            st.rerun()
 
 if __name__ == "__main__":
     main()
