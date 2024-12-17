@@ -84,7 +84,7 @@ export MONGODB_URI="your_mongodb_uri"
 
 1. Start the Streamlit app:
 ```bash
-streamlit run earnings_ai_demo/app.py
+streamlit run earnings_ai_demo/earnings_ai_demo/app.py
 ```
 
 2. Open your browser at `http://localhost:8501`
@@ -95,7 +95,7 @@ streamlit run earnings_ai_demo/app.py
 
 Process a directory of files:
 ```bash
-python earnings_ai_demo/main.py
+python earnings_ai_demo/earnings_ai_demo/main.py
 ```
 
 The script will:
