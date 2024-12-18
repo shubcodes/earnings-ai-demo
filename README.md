@@ -4,6 +4,7 @@ Transform earnings calls and financial documents into actionable insights using 
 
 ## Table of Contents
 - [Overview](#overview)
+- [Architecture](#architecture)
 - [Features](#features)
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -21,6 +22,9 @@ Transform earnings calls and financial documents into actionable insights using 
 ## Overview
 
 EarningsAI Demo is a powerful tool that combines audio transcription, document processing, and AI-powered analysis to help users extract insights from earnings calls and financial documents. Built with Fireworks AI and MongoDB, it provides both a command-line interface and a web application for processing and querying financial data.
+
+### Architecture
+![FireworksAI+MongoDB Atlas RAG Architecture](Fireworks_RAG_Architecture.png)
 
 ### Features
 
