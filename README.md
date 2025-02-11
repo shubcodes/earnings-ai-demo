@@ -47,7 +47,7 @@ EarningsAI Demo is a powerful tool that combines audio transcription, document p
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/earnings-ai-demo.git
+git clone https://github.com/shubcodes/earnings-ai-demo.git
 cd earnings-ai-demo
 ```
 
